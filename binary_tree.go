@@ -24,23 +24,30 @@ func insert(t *tree, data int){
 }
 
 func print_tree(t *tree){
+
+
   if t.lchild == nil{
-    fmt.Println(t.data)
+
     if t.rchild ==nil{
+      fmt.Println(t.data)
       return
     }
-    print_tree(t.rchild)
   }else{
     print_tree(t.lchild)
   }
+
+
   if t.rchild == nil{
-    fmt.Println(t.data)
+
     if t.rchild == nil{
+      fmt.Println(t.data)
       return
     }
   }else{
     print_tree(t.rchild)
   }
+  fmt.Println(t.data)
+  return
 }
 
 func main(){
@@ -50,6 +57,8 @@ func main(){
   insert(&t, 3)
   insert(&t, 4)
   insert(&t, 5)
+  insert(&t, 6)
+  insert(&t, 7)
   fmt.Println(t)
 
   //fmt.Println(t.data)
