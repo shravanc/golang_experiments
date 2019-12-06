@@ -1,6 +1,9 @@
 package main
 
-import("fmt")
+import(
+    "fmt"
+    "encoding/json"
+    )
 
 type Node struct{
   value int
@@ -22,6 +25,10 @@ func push(n *Node, x int){
 
 }
 
+func push_me(n **Node, x int){
+  push(*n, x)
+}
+
 func print_list(n *Node){
   for p:=n; p!=nil;p=p.next{
     fmt.Println(p.value)
@@ -31,9 +38,10 @@ func print_list(n *Node){
 
 
 func main(){
-  var n1 Node;
-  push(&n1, 1)
-  push(&n1, 2)
-  print_list(&n1)
+  var n1 *Node;
+  push_me(&n1, 1)
+  push_me(&n1, 2)
+  avl,_ := json.MarshalIndent(n1, "", "   ")
+  fmt.Println(string(avl))
 
 }

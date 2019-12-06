@@ -39,13 +39,13 @@ type linked_list struct{
   size int
 }
 
-/*
+
 type binary_tree struct{
   data int
   lchild *binary_tree
   rchild *binary_tree
 }
-
+/*
 type avl_tree struct{
   data int
   lchild *avl_tree
@@ -129,6 +129,9 @@ func producer(s stack){
 
   s.push("a")
   s.push("b")
+  s.push("c")
+  s.printData()
+  s.pop()
   s.printData()
   s.pop()
   s.printData()

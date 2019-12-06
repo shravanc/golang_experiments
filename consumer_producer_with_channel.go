@@ -1,6 +1,5 @@
 package main
-import("fmt"
-       "time")
+import("fmt")
 
 type Node struct{
   data int
@@ -44,7 +43,7 @@ func producer(node *Node, c chan string){
     produce(node, i)
     c <-fmt.Sprintf("Produced--->%d", i)
     fmt.Printf("Producing--->%d\n", i)
-    time.Sleep(time.Second*1)
+    //time.Sleep(time.Second*1)
   }
   close(c)
 }
